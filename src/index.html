@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preload" href="/assets/images/cards/girl_3x.webp" as="image">
+    <link rel="preload" href="/assets/images/cards/girl_2x.webp" as="image">
+    <link rel="preload" href="/assets/images/cards/grandma_3x.webp" as="image">
+    <link rel="preload" href="/assets/images/cards/grandma_2x.webp" as="image">
+    <link rel="preload" href="/assets/images/cards/man_3x.webp" as="image">
+    <link rel="preload" href="/assets/images/cards/man_2x.webp" as="image">
+    <title>Arta banner</title>
+</head>
+<body>
+<a class="cross-icon" href="#">
+    <img alt="cross-icon" src="/assets/icons/cross.svg"/>
+</a>
+<main id="app">
+    <h1 data-i18n="Get Unlimited <br>Access">Get Unlimited Access</h1>
+    <section class="cards">
+        <article class="card" id="art">
+            <div class="shadow"></div>
+            <div class="blue"></div>
+            <picture>
+                <source
+                        media="(min-resolution: 3dppx)"
+                        type="image/webp"
+                        srcset="/assets/images/cards/girl_3x.webp">
+                <source
+                        media="(min-resolution: 2dppx)"
+                        type="image/webp"
+                        srcset="/assets/images/cards/girl_2x.webp"
+                >
+                <img
+                        width="110"
+                        height="146"
+                        src="/assets/images/cards/girl_2x.webp"
+                        alt="Unlimited Art">
+            </picture>
+            <span data-i18n="Unlimited Art <br>Creation" class="card-title">Unlimited Art Creation</span>
+        </article>
+        <article class="card">
+            <div class="shadow" id="exclusive-styles"></div>
+            <picture>
+                <source
+                        media="(min-resolution: 3dppx)"
+                        type="image/webp"
+                        srcset="./assets/images/cards/grandma_3x.webp">
+                <source
+                        media="(min-resolution: 2dppx)"
+                        type="image/webp"
+                        srcset="/assets/images/cards/grandma_2x.webp"
+                >
+                <img
+                        width="110"
+                        height="146"
+                        src="/assets/images/cards/grandma_2x.webp"
+                        alt="Exclusive Styles">
+            </picture>
+            <span data-i18n="Exclusive <br>Styles" class="card-title">Exclusive Styles </span>
+        </article>
+        <article class="card" id="avatars">
+            <div class="shadow"></div>
+            <picture>
+                <source
+                        media="(min-resolution: 3dppx)"
+                        type="image/webp"
+                        srcset="./assets/images/cards/man_3x.webp">
+                <source
+                        media="(min-resolution: 2dppx)"
+                        type="image/webp"
+                        srcset="/assets/images/cards/man_2x.webp"
+                >
+                <img
+                        width="110"
+                        height="146"
+                        src="/assets/images/cards/man_2x.webp"
+                        alt="Exclusive Styles">
+            </picture>
+            <span data-i18n="Magic Avatars <br>With 20% Off" class="card-title">Magic Avatars With 20% Off </span>
+        </article>
+    </section>
+    <form id="subscription-form" class="subscription-form">
+        <label class="pricing-option yearly">
+            <div data-i18n="BEST OFFER" class="mark">
+                Best Offer
+            </div>
+            <input type="radio" name="subscription" value="yearly">
+            <div class="option-content">
+                <div class="plan-info">
+                    <span data-i18n="YEARLY ACCESS" class="title">Yearly Access</span>
+                    <span
+                            data-i18n="Just {{price}} per year"
+                            data-i18n-values='{"price":"$39.99"}'
+                            class="description">Just $39.99 per year</span>
+                </div>
+                <div class="price-info">
+                        <span
+                                data-i18n="{{price}} <br>per week"
+                                data-i18n-values='{"price": "$0.48"}'
+                                class="price">$0.48 <br> per week </span>
+                </div>
+            </div>
+        </label>
+        <label class="pricing-option weekly">
+            <input type="radio" name="subscription" value="weekly" checked="checked">
+            <div class="option-content">
+                <div class="plan-info">
+                    <span data-i18n="WEEKLY ACCESS" class="title">Weekly Access</span>
+                </div>
+                <div class="price-info">
+                        <span
+                                data-i18n-values='{"price":"$6.99"}'
+                                data-i18n="{{price}} <br>per week"
+                                class="price">$6.99 <br> per week</span>
+                </div>
+            </div>
+        </label>
+        <button data-i18n="Continue" type="submit">Continue</button>
+    </form>
+</main>
+<footer class="footer-links">
+    <a data-i18n="Terms of Use" href="#">Terms of Use</a>
+    <a data-i18n="Privacy Policy" href="#">Privacy Policy</a>
+    <a data-i18n="Restore" href="#">Restore</a>
+</footer>
+</body>
+</html>
