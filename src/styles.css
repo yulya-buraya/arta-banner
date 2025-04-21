@@ -160,9 +160,16 @@ h1 {
     height: 0;
 }
 
+.pricing-option:has(input[type="radio"]:focus){
+    outline: none;
+}
+
 .pricing-option:has(input[type="radio"]:checked) {
     border: 1px solid rgba(255, 255, 255, 1);
     background: rgba(255, 255, 255, 0.3024);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .yearly:has(input[type="radio"]:checked) .mark {
@@ -278,6 +285,9 @@ body[data-lang="ja"] .option-content {
 .subscription-form button:focus,
 .subscription-form button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .footer-links {
