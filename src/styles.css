@@ -130,9 +130,8 @@ h1 {
 }
 
 .subscription-form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
     row-gap: 8px;
     width: inherit;
     height: auto;
@@ -141,7 +140,7 @@ h1 {
 }
 
 .pricing-option {
-    display: block;
+    display: flex;
     position: relative;
     width: 100%;
     height: auto;
@@ -151,6 +150,8 @@ h1 {
     border-radius: 100px;
     cursor: pointer;
     border: 1px solid transparent;
+    flex:1;
+    align-items: center;
 }
 
 .pricing-option input[type="radio"] {
@@ -184,6 +185,8 @@ h1 {
 }
 
 .option-content {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
