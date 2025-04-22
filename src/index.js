@@ -1,5 +1,14 @@
 import "./styles.css"
 
+window.addEventListener("DOMContentLoaded", () => {
+	setVh();
+	adjustBannerMargin();
+});
+window.addEventListener("resize", () => {
+	setVh();
+	adjustBannerMargin();
+});
+
 document.getElementById('subscription-form').addEventListener('submit', function (event) {
 	event.preventDefault();
 
@@ -78,11 +87,19 @@ function setVh() {
 	document.documentElement.style.setProperty('--vh', `${ vh }px`);
 }
 
-window.addEventListener("resize", setVh);
-window.addEventListener('load', setVh);
+function adjustBannerMargin() {
+	const viewportHeight = window.innerHeight;
+	const screenHeight = screen.height;
+	const searchBarHeight = screenHeight - viewportHeight;
 
-
-
+	const header = document.querySelector('h1');
+	const baseMarginTop = parseFloat(getComputedStyle(header).marginTop) || 0;
+	if (searchBarHeight > 0) {
+		header.style.marginTop = `${ Math.max(baseMarginTop - searchBarHeight, 0) }px`;
+	} else {
+		header.style.marginTop = `${ baseMarginTop }px`;
+	}
+}
 
 
 
