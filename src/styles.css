@@ -5,18 +5,23 @@
 
 :root {
     --vh: 1vh;
+    --h1-margin-top: 200px;
+
 }
 
 html {
     height: calc(var(--vh, 1vh) * 100);
+    max-height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 body {
     font-family: "SF Pro", "SF Pro Text", "SF Pro Display", sans-serif;
     height: calc(var(--vh, 1vh) * 100);
-    min-width: 100vw;
     width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     background-color: rgba(5, 1, 14, 0.97);
     background-image: url("assets/images/background/iphone_13/bg_x3_13.webp");
     background-size: cover;
@@ -28,6 +33,7 @@ body {
 }
 
 #app {
+    max-height: 100vh;
     height: auto;
     margin: 0 auto;
     width: 40%;
@@ -41,6 +47,11 @@ body {
     left: calc(10px + env(safe-area-inset-left));
     top: max(calc(30px + env(safe-area-inset-top)), 16px);
     padding: 6px;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .cross-icon img {
@@ -53,7 +64,7 @@ body {
 }
 
 h1 {
-    margin-top: 200px;
+    margin-top: var(--h1-margin-top);
     font-weight: 860;
     font-size: 42px;
     line-height: 46px;
@@ -150,8 +161,13 @@ h1 {
     border-radius: 100px;
     cursor: pointer;
     border: 1px solid transparent;
-    flex:1;
+    flex: 1;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    outline: none;
+
 }
 
 .pricing-option input[type="radio"] {
@@ -161,16 +177,13 @@ h1 {
     height: 0;
 }
 
-.pricing-option:has(input[type="radio"]:focus){
+.pricing-option:has(input[type="radio"]:focus) {
     outline: none;
 }
 
 .pricing-option:has(input[type="radio"]:checked) {
     border: 1px solid rgba(255, 255, 255, 1);
     background: rgba(255, 255, 255, 0.3024);
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
 }
 
 .yearly:has(input[type="radio"]:checked) .mark {
@@ -193,6 +206,10 @@ h1 {
     font-size: 16px;
     font-weight: 400;
     gap: 10px;
+}
+
+body[data-lang="de"] h1 {
+    font-size: 30px;
 }
 
 body[data-lang="ja"] .option-content {
@@ -279,6 +296,9 @@ body[data-lang="ja"] .option-content {
     font-family: inherit;
     background: rgba(255, 255, 255, 1);
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .subscription-form button:hover {
@@ -320,24 +340,24 @@ and (min-width: 320px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (max-aspect-ratio: 16/9)
 and (orientation: portrait) {
-    body{
+    body {
         background-image: url("assets/images/background/iphone_8/bg_x2_8.webp");
     }
 
-    #app{
+    #app {
         padding: 0 20px;
         width: 100%;
 
     }
 
     h1 {
-        margin-top: 133px;
+        --h1-margin-top: 133px;
         font-size: 35px;
         line-height: 40px;
     }
 
     .cross-icon {
-        left: max(8.5px,env(safe-area-inset-left));
+        left: max(8.5px, env(safe-area-inset-left));
         top: max(25.5px, env(safe-area-inset-top));
         padding: 5px;
     }
@@ -390,7 +410,7 @@ and (orientation: portrait) {
         font-size: 11px;
         height: 18px;
         right: 19px;
-        top:-10px;
+        top: -10px;
 
     }
 
@@ -409,11 +429,11 @@ and (orientation: portrait) {
         bottom: max(env(safe-area-inset-bottom), 5px);
     }
 
-    body[data-lang="de"] h1{
+    body[data-lang="de"] h1 {
         font-size: 22px;
     }
 
-    body[data-lang="fr"] h1{
+    body[data-lang="fr"] h1 {
         font-size: 32px;
     }
 
@@ -430,7 +450,7 @@ and (orientation: portrait) {
 
     body[data-lang='pt'] .mark,
     body[data-lang='fr'] .mark,
-    body[data-lang='de'] .mark{
+    body[data-lang='de'] .mark {
         font-size: 10px;
     }
 
@@ -445,15 +465,16 @@ and (min-width: 375px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (max-aspect-ratio: 16/9)
 and (orientation: portrait) {
-    body{
+    body {
         background-image: url("assets/images/background/iphone_8/bg_x2_8.webp");
     }
 
-    #app{
+    #app {
         padding: 0 24px;
         width: 100%;
 
     }
+
     .cross-icon {
         left: max(10px, env(safe-area-inset-left));
         top: max(30px, env(safe-area-inset-top));
@@ -466,7 +487,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 156px;
+        --h1-margin-top: 156px;
         font-size: 42px;
         line-height: 46px;
     }
@@ -515,7 +536,7 @@ and (orientation: portrait) {
         padding: 0 22px;
         font-size: 13px;
         right: 21px;
-        top:-12px;
+        top: -12px;
     }
 
     .mark::before {
@@ -533,19 +554,19 @@ and (orientation: portrait) {
         bottom: max(env(safe-area-inset-bottom), 6px);
     }
 
-    body[data-lang='fr'] h1{
+    body[data-lang='fr'] h1 {
         font-size: 36px;
     }
 
-    body[data-lang='de'] h1{
+    body[data-lang='de'] h1 {
         font-size: 24px;
     }
 
-    body[data-lang='pt'] h1{
+    body[data-lang='pt'] h1 {
         font-size: 40px;
     }
 
-    body[data-lang='pt'] .option-content{
+    body[data-lang='pt'] .option-content {
         font-size: 16px;
     }
 
@@ -561,7 +582,7 @@ and (orientation: portrait) {
         font-size: 12px;
     }
 
-    body[data-lang='pt'] .mark{
+    body[data-lang='pt'] .mark {
         font-size: 12px;
     }
 
@@ -582,15 +603,17 @@ and (min-width: 375px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
-    body{
+    body {
         background-image: url("assets/images/background/iphone_13/bg_x3_13.webp");
     }
-    #app{
+
+    #app {
         padding: 0 23px;
         width: 100%;
     }
+
     .cross-icon {
-        left: max(9.6px,env(safe-area-inset-left));
+        left: max(9.6px, env(safe-area-inset-left));
         top: max(55.68px, env(safe-area-inset-top));
         padding: 5.8px;
     }
@@ -601,7 +624,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 257px;
+        --h1-margin-top: 257px;
         font-size: 40px;
         line-height: 44px;
     }
@@ -646,13 +669,15 @@ and (orientation: portrait) {
     .option-content {
         font-size: 15px;
     }
-    .plan-info{
+
+    .plan-info {
         width: 68%;
     }
 
-    .price-info{
+    .price-info {
         width: 32%;
     }
+
     .mark {
         padding: 0 22px;
         font-size: 12px;
@@ -677,7 +702,7 @@ and (orientation: portrait) {
     }
 
     body[data-lang='de'] .mark,
-    body[data-lang='fr'] .mark{
+    body[data-lang='fr'] .mark {
         font-size: 12px;
     }
 
@@ -686,10 +711,12 @@ and (orientation: portrait) {
     body[data-lang='fr'] .footer-links {
         font-size: 12px;
     }
-    body[data-lang = 'pt'] .option-content{
+
+    body[data-lang = 'pt'] .option-content {
         font-size: 15px;
     }
-    body[data-lang = 'de'] .option-content{
+
+    body[data-lang = 'de'] .option-content {
         font-size: 12px;
     }
 }
@@ -701,8 +728,8 @@ and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
 
     .cross-icon {
-        left: max(10px,env(safe-area-inset-left));
-        top: max(58px,env(safe-area-inset-top));
+        left: max(10px, env(safe-area-inset-left));
+        top: max(58px, env(safe-area-inset-top));
         padding: 6px;
     }
 
@@ -712,7 +739,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 266px;
+        --h1-margin-top: 266px;
         font-size: 42px;
         line-height: 46px;
     }
@@ -743,11 +770,11 @@ and (orientation: portrait) {
         font-size: 16px;
     }
 
-    .plan-info{
+    .plan-info {
         width: 67%;
     }
 
-    .price-info{
+    .price-info {
         width: 33%;
     }
 
@@ -786,10 +813,12 @@ and (orientation: portrait) {
         font-size: 13px;
         bottom: max(38px, env(safe-area-inset-bottom))
     }
-    body[data-lang='pt'] h1{
+
+    body[data-lang='pt'] h1 {
         font-size: 42px;
     }
-    body[data-lang='fr'] h1{
+
+    body[data-lang='fr'] h1 {
         font-size: 38px;
     }
 
@@ -816,17 +845,18 @@ and (min-width: 414px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (max-aspect-ratio: 16/9)
 and (orientation: portrait) {
-    body{
+    body {
         background-image: url("assets/images/background/iphone_8/bg_x3_8.webp");
     }
-    #app{
+
+    #app {
         padding: 0 26px;
         width: 100%;
     }
 
     .cross-icon {
-        left: max(11px,env(safe-area-inset-left));
-        top: max(33px,env(safe-area-inset-top));
+        left: max(11px, env(safe-area-inset-left));
+        top: max(33px, env(safe-area-inset-top));
         padding: 6.6px;
     }
 
@@ -836,7 +866,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 172px;
+        --h1-margin-top: 172px;
         font-size: 46px;
         line-height: 50.8px;
     }
@@ -874,15 +904,15 @@ and (orientation: portrait) {
         padding: 9.9px 25px;
     }
 
-    body[data-lang='de'] h1{
+    body[data-lang='de'] h1 {
         font-size: 28px;
     }
 
-    body[data-lang='fr'] h1{
+    body[data-lang='fr'] h1 {
         font-size: 42px;
     }
 
-    body[data-lang='pt'] h1{
+    body[data-lang='pt'] h1 {
         font-size: 44px;
     }
 
@@ -918,7 +948,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 14px;
-        bottom: max(env(safe-area-inset-bottom),7px);
+        bottom: max(env(safe-area-inset-bottom), 7px);
     }
 
     body[data-lang='pt'] .mark,
@@ -930,6 +960,7 @@ and (orientation: portrait) {
     body[data-lang='fr'] .mark {
         font-size: 14px;
     }
+
     body[data-lang='fr'] .card-title,
     body[data-lang='es'] .card-title,
     body[data-lang='ja'] .card-title,
@@ -957,17 +988,18 @@ and (min-width: 428px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
-    body{
+    body {
         background-image: url("assets/images/background/iphone_13/bg_x3_13.webp");
     }
-    #app{
+
+    #app {
         padding: 0 26px;
         width: 100%;
     }
 
     .cross-icon {
-        left: max(10.97px,env(safe-area-inset-left));
-        top: max(63.63px,env(safe-area-inset-top));
+        left: max(10.97px, env(safe-area-inset-left));
+        top: max(63.63px, env(safe-area-inset-top));
         padding: 6px;
     }
 
@@ -977,7 +1009,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 291.92px;
+        --h1-margin-top: 291.92px;
         line-height: 51px;
     }
 
@@ -1003,7 +1035,7 @@ and (orientation: portrait) {
     .subscription-form {
         margin-top: 37.3px;
         row-gap: 8.8px;
-        grid-template-rows:61.5px 61.5px 61.5px ;
+        grid-template-rows:61.5px 61.5px 61.5px;
     }
 
     .pricing-option {
@@ -1019,8 +1051,8 @@ and (orientation: portrait) {
         height: 100%;
     }
 
-    .mark{
-        top:-13px;
+    .mark {
+        top: -13px;
     }
 
     .mark::before {
@@ -1033,15 +1065,16 @@ and (orientation: portrait) {
         top: 8px;
     }
 
-    body[data-lang="de"] .option-content{
+    body[data-lang="de"] .option-content {
         font-size: 15px;
     }
 
     body[data-lang='fr'] .option-content {
         font-size: 17px;
     }
+
     .footer-links {
-         bottom: max(env(safe-area-inset-bottom, 0),42px);
+        bottom: max(env(safe-area-inset-bottom, 0), 42px);
     }
 }
 
@@ -1050,8 +1083,8 @@ and (min-width: 430px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
-    .h1{
-        margin-top: 293px;
+    .h1 {
+        --h1-margin-top: 293px;
     }
 
     .cross-icon img {
@@ -1080,7 +1113,8 @@ and (orientation: portrait) {
     .mark::before {
         width: 143.3px;
     }
+
     .footer-links {
-        bottom: max(env(safe-area-inset-bottom, 0),43px);
+        bottom: max(env(safe-area-inset-bottom, 0), 43px);
     }
 }

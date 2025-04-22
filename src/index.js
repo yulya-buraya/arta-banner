@@ -1,15 +1,26 @@
 import "./styles.css"
 
 setVh();
-adjustBannerMargin();
 
 window.addEventListener("DOMContentLoaded", () => {
 	setVh();
 	adjustBannerMargin();
+
+	const lang = detectLanguage();
+	document.body.setAttribute('data-lang', lang);
+	translateText(lang);
 });
+
 window.addEventListener("resize", () => {
+	setTimeout(() => {
+		setVh();
+		adjustBannerMargin();
+	});
+});
+
+window.visualViewport?.addEventListener("resize", () => {
 	setVh();
-	adjustBannerMargin();
+	adjustBannerMargin()
 });
 
 document.getElementById('subscription-form').addEventListener('submit', function (event) {
@@ -37,11 +48,6 @@ const translations = {
 	ja: require('../public/lang/ja.json'),
 	pt: require('../public/lang/pt.json'),
 };
-window.addEventListener('DOMContentLoaded', () => {
-	const lang = detectLanguage();
-	document.body.setAttribute('data-lang', lang);
-	translateText(lang);
-})
 
 function detectLanguage() {
 	const searchParams = new URLSearchParams(window.location.search);
@@ -84,27 +90,49 @@ function interpolate(translateString, values = {}) {
 }
 
 function setVh() {
-	const vh = window.innerHeight * 0.01;
+	const viewportHeight = window.visualViewport?.height
+		|| document.documentElement.clientHeight
+		|| window.innerHeight;
+
+	const vh = viewportHeight * 0.01;
 	document.documentElement.style.setProperty('--vh', `${ vh }px`);
 }
 
+function isStandaloneMode() {
+	return window.matchMedia('(display-mode: standalone)').matches
+		|| window.navigator.standalone === true;
+}
+
+function getBaseMarginTopFromCSS() {
+	const header = document.querySelector('h1');
+	if (!header) return;
+
+	const rawValue = getComputedStyle(header).getPropertyValue('--h1-margin-top');
+	const baseMargin = parseFloat(rawValue);
+	return isNaN(baseMargin) ? 0 : baseMargin;
+}
+
 function adjustBannerMargin() {
-	const viewportHeight = window.innerHeight;
+	const viewportHeight =
+		window.visualViewport?.height ||
+		document.documentElement.clientHeight ||
+		window.innerHeight;
+
 	const screenHeight = screen.height;
 	const searchBarHeight = screenHeight - viewportHeight;
 
 	const header = document.querySelector('h1');
-	const baseMarginTop = parseFloat(getComputedStyle(header).marginTop) || 0;
-	if (searchBarHeight > 0) {
+
+	const baseMarginTop = getBaseMarginTopFromCSS();
+
+	const standalone = isStandaloneMode();
+
+	if (!standalone && searchBarHeight > 50) {
 		header.style.marginTop = `${ Math.max(baseMarginTop - searchBarHeight, 0) }px`;
 	} else {
 		header.style.marginTop = `${ baseMarginTop }px`;
 	}
 }
-
-
-
-
 
 
 
