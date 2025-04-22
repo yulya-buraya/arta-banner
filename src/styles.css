@@ -18,13 +18,11 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     width: 100%;
-    background-color: rgba(5, 1, 14, 0.97);
+    /*background-color: rgba(5, 1, 14, 0.97);*/
     background-image: url("assets/images/background/iphone_13/bg_x3_13.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: flex;
-    place-items: center;
     overflow: hidden;
     overscroll-behavior: none;
     touch-action: pan-x;
@@ -32,8 +30,9 @@ body {
 
 #app {
     height: auto;
+    min-height: 100vh;
     margin: 0 auto;
-    width: auto;
+    width: 30%;
     text-align: center;
     padding: 0 24px;
 }
@@ -56,6 +55,7 @@ body {
 }
 
 h1 {
+    margin-top: 50px;
     font-weight: 860;
     font-size: 42px;
     line-height: 46px;
@@ -135,7 +135,7 @@ h1 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     row-gap: 8px;
-    width: inherit;
+    width: 100%;
     height: auto;
     margin-top: 26px;
 
@@ -302,7 +302,6 @@ body[data-lang="ja"] .option-content {
     bottom: calc(env(safe-area-inset-bottom, 0) + 8px);
     display: flex;
     justify-content: space-around;
-    gap: 4px;
     font-weight: 200;
     font-size: 13px;
     line-height: 18px;
@@ -310,6 +309,7 @@ body[data-lang="ja"] .option-content {
     text-decoration-style: solid;
     color: rgba(255, 255, 255, 0.3);
     padding: 0 16px;
+    opacity: 0.3;
 }
 
 .footer-links a {
@@ -333,14 +333,14 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 88px;
+        margin-top: 133px;
         font-size: 35px;
         line-height: 40px;
     }
 
     .cross-icon {
-        left: calc(8.5px + env(safe-area-inset-left));
-        top: max(calc(25.5px + env(safe-area-inset-top)), 13.6px);
+        left: max(8.5px,env(safe-area-inset-left));
+        top: max(25.5px, env(safe-area-inset-top));
         padding: 5px;
     }
 
@@ -408,7 +408,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 11px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 5.1px);
+        bottom: max(env(safe-area-inset-bottom), 5px);
     }
 
     body[data-lang='pt'] .option-content,
@@ -449,8 +449,8 @@ and (orientation: portrait) {
 
     }
     .cross-icon {
-        left: calc(10px + env(safe-area-inset-left));
-        top: max(calc(30px + env(safe-area-inset-top)), 16px);
+        left: max(10px, env(safe-area-inset-left));
+        top: max(30px, env(safe-area-inset-top));
         padding: 6px;
     }
 
@@ -460,7 +460,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 101px;
+        margin-top: 156px;
         font-size: 42px;
         line-height: 46px;
     }
@@ -509,7 +509,7 @@ and (orientation: portrait) {
         padding: 0 22px;
         font-size: 13px;
         right: 21px;
-        top:-10px;
+        top:-12px;
     }
 
     .mark::before {
@@ -524,7 +524,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 13px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 6px);
+        bottom: max(env(safe-area-inset-bottom), 6px);
     }
 
     body[data-lang='pt'] .option-content{
@@ -572,8 +572,8 @@ and (orientation: portrait) {
         width: 100%;
     }
     .cross-icon {
-        left: calc(9.6px + env(safe-area-inset-left));
-        top: max(calc(55.68px + env(safe-area-inset-top)), 15px);
+        left: max(9.6px,env(safe-area-inset-left));
+        top: max(55.68px, env(safe-area-inset-top));
         padding: 5.8px;
     }
 
@@ -583,7 +583,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 159px;
+        margin-top: 257px;
         font-size: 40px;
         line-height: 44px;
     }
@@ -655,7 +655,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 12px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 38px);
+        bottom: max(env(safe-area-inset-bottom), 38px);
     }
 
     body[data-lang='de'] .mark,
@@ -683,8 +683,8 @@ and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
 
     .cross-icon {
-        left: calc(10px + env(safe-area-inset-left));
-        top: max(calc(58px + env(safe-area-inset-top)), 16px);
+        left: max(10px,env(safe-area-inset-left));
+        top: max(58px,env(safe-area-inset-top));
         padding: 6px;
     }
 
@@ -694,7 +694,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 167px;
+        margin-top: 266px;
         font-size: 42px;
         line-height: 46px;
     }
@@ -766,7 +766,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 13px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 38px);
+        bottom: max(38px, env(safe-area-inset-bottom))
     }
     body[data-lang = 'pt'] .option-content {
         font-size: 16px;
@@ -800,8 +800,8 @@ and (orientation: portrait) {
     }
 
     .cross-icon {
-        left: calc(11px + env(safe-area-inset-left));
-        top: max(calc(33px + env(safe-area-inset-top)), 17.7px);
+        left: max(11px,env(safe-area-inset-left));
+        top: max(33px,env(safe-area-inset-top));
         padding: 6.6px;
     }
 
@@ -811,7 +811,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 111px;
+        margin-top: 172px;
         font-size: 46px;
         line-height: 50.8px;
     }
@@ -866,7 +866,7 @@ and (orientation: portrait) {
         font-size: 14px;
         height: 22px;
         right: 27px;
-        top: -11px;
+        top: -12px;
     }
 
     .mark::before {
@@ -881,7 +881,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 14px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 41px);
+        bottom: max(env(safe-area-inset-bottom),7px);
     }
 
     body[data-lang='pt'] .mark,
@@ -929,8 +929,8 @@ and (orientation: portrait) {
     }
 
     .cross-icon {
-        left: calc(10.97px + env(safe-area-inset-left));
-        top: max(calc(63.63px + env(safe-area-inset-top)), 16px);
+        left: max(10.97px,env(safe-area-inset-left));
+        top: max(63.63px,env(safe-area-inset-top));
         padding: 6px;
     }
 
@@ -940,7 +940,7 @@ and (orientation: portrait) {
     }
 
     h1 {
-        margin-top: 183px;
+        margin-top: 291.92px;
         line-height: 51px;
     }
 
@@ -982,6 +982,10 @@ and (orientation: portrait) {
         height: 100%;
     }
 
+    .mark{
+        top:-13px;
+    }
+
     .mark::before {
         width: 118px;
     }
@@ -999,6 +1003,9 @@ and (orientation: portrait) {
     body[data-lang='fr'] .option-content {
         font-size: 17px;
     }
+    .footer-links {
+         bottom: max(env(safe-area-inset-bottom, 0),42px);
+    }
 }
 
 @media only screen
@@ -1006,6 +1013,9 @@ and (min-width: 430px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
+    .h1{
+        margin-top: 293px;
+    }
 
     .cross-icon img {
         width: 26.5px;
@@ -1032,5 +1042,8 @@ and (orientation: portrait) {
 
     .mark::before {
         width: 143.3px;
+    }
+    .footer-links {
+        bottom: max(env(safe-area-inset-bottom, 0),43px);
     }
 }
