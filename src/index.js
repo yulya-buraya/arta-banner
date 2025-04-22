@@ -1,5 +1,8 @@
 import "./styles.css"
 
+setVh();
+adjustBannerMargin();
+
 window.addEventListener("DOMContentLoaded", () => {
 	setVh();
 	adjustBannerMargin();
@@ -79,8 +82,6 @@ function t(key, values = {}, currentTranslations) {
 function interpolate(translateString, values = {}) {
 	return translateString.replace(/{{(.*?)}}/g, (_, key) => values[key.trim()] || '')
 }
-
-setVh();
 
 function setVh() {
 	const vh = window.innerHeight * 0.01;
