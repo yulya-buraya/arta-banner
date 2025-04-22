@@ -309,7 +309,7 @@ body[data-lang="ja"] .option-content {
     text-decoration-style: solid;
     color: rgba(255, 255, 255, 0.3);
     padding: 0 16px;
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 .footer-links a {
@@ -409,6 +409,14 @@ and (orientation: portrait) {
     .footer-links {
         font-size: 11px;
         bottom: max(env(safe-area-inset-bottom), 5px);
+    }
+
+    body[data-lang="de"] h1{
+        font-size: 22px;
+    }
+
+    body[data-lang="fr"] h1{
+        font-size: 32px;
     }
 
     body[data-lang='pt'] .option-content,
@@ -525,6 +533,18 @@ and (orientation: portrait) {
     .footer-links {
         font-size: 13px;
         bottom: max(env(safe-area-inset-bottom), 6px);
+    }
+
+    body[data-lang='fr'] h1{
+        font-size: 36px;
+    }
+
+    body[data-lang='de'] h1{
+        font-size: 24px;
+    }
+
+    body[data-lang='pt'] h1{
+        font-size: 40px;
     }
 
     body[data-lang='pt'] .option-content{
@@ -657,6 +677,9 @@ and (orientation: portrait) {
         font-size: 12px;
         bottom: max(env(safe-area-inset-bottom), 38px);
     }
+    body[data-lang='de'] h1{
+        font-size: 26px;
+    }
 
     body[data-lang='de'] .mark,
     body[data-lang='fr'] .mark{
@@ -759,15 +782,22 @@ and (orientation: portrait) {
     }
 
     .mark::after {
-        height: 29px;
+        height: 27px;
         width: 26px;
-        top: 6px;
+        top: 8px;
     }
 
     .footer-links {
         font-size: 13px;
         bottom: max(38px, env(safe-area-inset-bottom))
     }
+    body[data-lang='pt'] h1{
+        font-size: 42px;
+    }
+    body[data-lang='fr'] h1{
+        font-size: 38px;
+    }
+
     body[data-lang = 'pt'] .option-content {
         font-size: 16px;
     }
@@ -847,6 +877,18 @@ and (orientation: portrait) {
 
     .pricing-option {
         padding: 9.9px 25px;
+    }
+
+    body[data-lang='de'] h1{
+        font-size: 28px;
+    }
+
+    body[data-lang='fr'] h1{
+        font-size: 42px;
+    }
+
+    body[data-lang='pt'] h1{
+        font-size: 44px;
     }
 
     body[data-lang='ja'] .option-content,
