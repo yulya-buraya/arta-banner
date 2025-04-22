@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, 'SF Pro Text', sans-serif;
+    font-family: "SF Pro", "SF Pro Text", "SF Pro Display", sans-serif;
     height: calc(var(--vh, 1vh) * 100);
     min-width: 100vw;
     min-height: 100vh;
@@ -33,6 +33,7 @@ body {
 #app {
     height: auto;
     margin: 0 auto;
+    width: auto;
     text-align: center;
     padding: 0 24px;
 }
@@ -40,8 +41,8 @@ body {
 .cross-icon {
     display: block;
     position: absolute;
-    left: calc(16px + env(safe-area-inset-left));
-    top: max(env(safe-area-inset-top), 16px);
+    left: calc(10px + env(safe-area-inset-left));
+    top: max(calc(30px + env(safe-area-inset-top)), 16px);
     padding: 6px;
 }
 
@@ -105,7 +106,7 @@ h1 {
     background-image: url("./assets/icons/blue.svg");
     background-size: cover;
     z-index: 1;
-    opacity: 0.35;
+    opacity: 50%;
 }
 
 .card img {
@@ -129,9 +130,10 @@ h1 {
     z-index: 5;
 }
 
+
 .subscription-form {
     display: grid;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: 1fr 1fr 1fr;
     row-gap: 8px;
     width: inherit;
     height: auto;
@@ -273,7 +275,7 @@ body[data-lang="ja"] .option-content {
     border: none;
     color: black;
     width: 100%;
-    height: 56px;
+    height: 100%;
     font-size: 20px;
     font-weight: 590;
     font-family: inherit;
@@ -323,14 +325,22 @@ and (orientation: portrait) {
     body{
         background-image: url("assets/images/background/iphone_8/bg_x2_8.webp");
     }
+
+    #app{
+        padding: 0 20px;
+        width: 100%;
+
+    }
+
     h1 {
-        font-size: 36px;
+        margin-top: 88px;
+        font-size: 35px;
         line-height: 40px;
     }
 
     .cross-icon {
-        left: calc(13.6px + env(safe-area-inset-left));
-        top: max(env(safe-area-inset-top), 13.6px);
+        left: calc(8.5px + env(safe-area-inset-left));
+        top: max(calc(25.5px + env(safe-area-inset-top)), 13.6px);
         padding: 5px;
     }
 
@@ -341,7 +351,7 @@ and (orientation: portrait) {
 
     .cards {
         gap: 3px;
-        margin-top: 13.6px;
+        margin-top: 12px;
     }
 
     .card {
@@ -355,15 +365,18 @@ and (orientation: portrait) {
         left: 7.65px;
         right: 6.8px;
         bottom: 10.2px;
+        letter-spacing: 0;
+        line-height: 1;
     }
 
     .pricing-option {
-        padding: 7.6px 20.4px;
+        padding: 7.6px 17px;
     }
 
     .subscription-form {
         margin-top: 22.1px;
         row-gap: 6.8px;
+        grid-template-rows: 48px 48px 48px;
     }
 
     .option-content {
@@ -371,7 +384,6 @@ and (orientation: portrait) {
     }
 
     .subscription-form button {
-        height: 48px;
         font-size: 18px;
     }
 
@@ -379,7 +391,8 @@ and (orientation: portrait) {
         padding: 0 18px;
         font-size: 11px;
         height: 18px;
-        right: 20px;
+        right: 19px;
+        top:-10px;
 
     }
 
@@ -388,14 +401,14 @@ and (orientation: portrait) {
     }
 
     .mark::after {
-        height: 24px;
-        width: 22px;
-        top: 7px;
+        height: 23px;
+        width: 21px;
+        top: 8px;
     }
 
     .footer-links {
         font-size: 11px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 6.8px);
+        bottom: calc(env(safe-area-inset-bottom, 0) + 5.1px);
     }
 
     body[data-lang='pt'] .option-content,
@@ -430,9 +443,14 @@ and (orientation: portrait) {
         background-image: url("assets/images/background/iphone_8/bg_x2_8.webp");
     }
 
+    #app{
+        padding: 0 24px;
+        width: 100%;
+
+    }
     .cross-icon {
-        left: calc(16px + env(safe-area-inset-left));
-        top: max(env(safe-area-inset-top), 16px);
+        left: calc(10px + env(safe-area-inset-left));
+        top: max(calc(30px + env(safe-area-inset-top)), 16px);
         padding: 6px;
     }
 
@@ -442,6 +460,7 @@ and (orientation: portrait) {
     }
 
     h1 {
+        margin-top: 101px;
         font-size: 42px;
         line-height: 46px;
     }
@@ -462,10 +481,12 @@ and (orientation: portrait) {
         left: 9px;
         right: 8px;
         bottom: 12px;
+        letter-spacing: 0.6px;
+        line-height: 1.1;
     }
 
     .pricing-option {
-        padding: 9px 24px;
+        padding: 9px 23px;
     }
 
     .option-content {
@@ -475,19 +496,20 @@ and (orientation: portrait) {
     .subscription-form {
         margin-top: 26px;
         row-gap: 8px;
+        grid-template-rows: 56px 56px 56px;
     }
 
     .subscription-form button {
         margin-top: 0;
-        height: 56px;
         font-size: 20px;
     }
 
     .mark {
-        height:20px;
+        height: 20px;
         padding: 0 22px;
         font-size: 13px;
-        right: 24px;
+        right: 21px;
+        top:-10px;
     }
 
     .mark::before {
@@ -495,14 +517,14 @@ and (orientation: portrait) {
     }
 
     .mark::after {
-        height: 29px;
-        width: 26px;
-        top: 7px;
+        height: 26px;
+        width: 23px;
+        top: 8px;
     }
 
     .footer-links {
         font-size: 13px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 8px);
+        bottom: calc(env(safe-area-inset-bottom, 0) + 6px);
     }
 
     body[data-lang='pt'] .option-content{
@@ -545,9 +567,13 @@ and (orientation: portrait) {
     body{
         background-image: url("assets/images/background/iphone_13/bg_x3_13.webp");
     }
+    #app{
+        padding: 0 23px;
+        width: 100%;
+    }
     .cross-icon {
-        left: calc(15px + env(safe-area-inset-left));
-        top: max(env(safe-area-inset-top), 15px);
+        left: calc(9.6px + env(safe-area-inset-left));
+        top: max(calc(55.68px + env(safe-area-inset-top)), 15px);
         padding: 5.8px;
     }
 
@@ -557,6 +583,7 @@ and (orientation: portrait) {
     }
 
     h1 {
+        margin-top: 159px;
         font-size: 40px;
         line-height: 44px;
     }
@@ -577,13 +604,14 @@ and (orientation: portrait) {
     }
 
     .subscription-form {
-        margin-top: 32.6px;
+        margin-top: 32px;
+        grid-template-rows: 53.76px 53.76px 53.76px;
     }
 
     .subscription-form button {
         margin-top: 7.6px;
         font-size: 19px;
-        height: 54px;
+        height: 100%;
     }
 
     .card-title {
@@ -600,13 +628,19 @@ and (orientation: portrait) {
     .option-content {
         font-size: 15px;
     }
+    .plan-info{
+        width: 68%;
+    }
 
+    .price-info{
+        width: 32%;
+    }
     .mark {
-        padding: 0 21px;
+        padding: 0 22px;
         font-size: 12px;
         height: 19px;
         right: 23px;
-        top: -9.9px;
+        top: -10.5px;
     }
 
     .mark::before {
@@ -621,7 +655,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 12px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 8.7px);
+        bottom: calc(env(safe-area-inset-bottom, 0) + 38px);
     }
 
     body[data-lang='de'] .mark,
@@ -648,12 +682,19 @@ and (-webkit-min-device-pixel-ratio: 3)
 and (max-aspect-ratio: 19/9)
 and (orientation: portrait) {
 
+    .cross-icon {
+        left: calc(10px + env(safe-area-inset-left));
+        top: max(calc(58px + env(safe-area-inset-top)), 16px);
+        padding: 6px;
+    }
+
     .cross-icon img {
         width: 24px;
         height: 24px;
     }
 
     h1 {
+        margin-top: 167px;
         font-size: 42px;
         line-height: 46px;
     }
@@ -676,11 +717,6 @@ and (orientation: portrait) {
         bottom: 12px;
     }
 
-    .subscription-form {
-        margin-top: 34px;
-        row-gap: 8px;
-    }
-
     .pricing-option {
         padding: 9px 24px;
     }
@@ -689,22 +725,33 @@ and (orientation: portrait) {
         font-size: 16px;
     }
 
+    .plan-info{
+        width: 67%;
+    }
+
+    .price-info{
+        width: 33%;
+    }
+
     .subscription-form {
-        margin-top: 26px;
+        margin-top: 34px;
+        row-gap: 8px;
+        grid-template-rows: 56px 56px 56px;
     }
 
     .subscription-form button {
         margin-top: 8px;
-        height: 56px;
+        height: 100%;
         font-size: 20px;
     }
+
 
     .mark {
         padding: 0 22px;
         font-size: 13px;
         height: 20px;
         right: 24px;
-        top: -10px;
+        top: -11px;
     }
 
     .mark::before {
@@ -719,7 +766,7 @@ and (orientation: portrait) {
 
     .footer-links {
         font-size: 13px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 9px);
+        bottom: calc(env(safe-area-inset-bottom, 0) + 38px);
     }
     body[data-lang = 'pt'] .option-content {
         font-size: 16px;
@@ -747,10 +794,14 @@ and (orientation: portrait) {
     body{
         background-image: url("assets/images/background/iphone_8/bg_x3_8.webp");
     }
+    #app{
+        padding: 0 26px;
+        width: 100%;
+    }
 
     .cross-icon {
-        left: calc(17.7px + env(safe-area-inset-left));
-        top: max(env(safe-area-inset-top), 17.7px);
+        left: calc(11px + env(safe-area-inset-left));
+        top: max(calc(33px + env(safe-area-inset-top)), 17.7px);
         padding: 6.6px;
     }
 
@@ -760,6 +811,7 @@ and (orientation: portrait) {
     }
 
     h1 {
+        margin-top: 111px;
         font-size: 46px;
         line-height: 50.8px;
     }
@@ -790,10 +842,11 @@ and (orientation: portrait) {
     .subscription-form {
         margin-top: 28.7px;
         row-gap: 8.8px;
+        grid-template-rows: 61.8px 61.8px 61.8px;
     }
 
     .pricing-option {
-        padding: 9.9px 26.5px;
+        padding: 9.9px 25px;
     }
 
     body[data-lang='ja'] .option-content,
@@ -803,17 +856,17 @@ and (orientation: portrait) {
     }
 
     .subscription-form button {
+        height: 100%;
         margin-top: 0;
-        height: 61.8px;
         font-size: 22px;
     }
 
     .mark {
-        padding: 0 24px;
+        padding: 0 25px;
         font-size: 14px;
         height: 22px;
-        right: 26.5px;
-        top: -12px;
+        right: 27px;
+        top: -11px;
     }
 
     .mark::before {
@@ -823,12 +876,12 @@ and (orientation: portrait) {
     .mark::after {
         height: 32px;
         width: 28.7px;
-        top: 7px;
+        top: 8.8px;
     }
 
     .footer-links {
         font-size: 14px;
-        bottom: calc(env(safe-area-inset-bottom, 0) + 9.9px);
+        bottom: calc(env(safe-area-inset-bottom, 0) + 41px);
     }
 
     body[data-lang='pt'] .mark,
@@ -870,6 +923,16 @@ and (orientation: portrait) {
     body{
         background-image: url("assets/images/background/iphone_13/bg_x3_13.webp");
     }
+    #app{
+        padding: 0 26px;
+        width: 100%;
+    }
+
+    .cross-icon {
+        left: calc(10.97px + env(safe-area-inset-left));
+        top: max(calc(63.63px + env(safe-area-inset-top)), 16px);
+        padding: 6px;
+    }
 
     .cross-icon img {
         width: 26.3px;
@@ -877,6 +940,7 @@ and (orientation: portrait) {
     }
 
     h1 {
+        margin-top: 183px;
         line-height: 51px;
     }
 
@@ -902,6 +966,7 @@ and (orientation: portrait) {
     .subscription-form {
         margin-top: 37.3px;
         row-gap: 8.8px;
+        grid-template-rows:61.5px 61.5px 61.5px ;
     }
 
     .pricing-option {
@@ -914,15 +979,15 @@ and (orientation: portrait) {
 
     .subscription-form button {
         margin-top: 8.8px;
-        height: 61.5px;
+        height: 100%;
     }
 
     .mark::before {
-        width: 140.5px;
+        width: 118px;
     }
 
     .mark::after {
-        height: 31.8px;
+        height: 31px;
         width: 28.5px;
         top: 8px;
     }
@@ -958,6 +1023,7 @@ and (orientation: portrait) {
 
     .subscription-form {
         margin-top: 37.5px;
+        grid-template-rows: 61.7px 61.7px 61.7px;
     }
 
     .pricing-option {
@@ -965,10 +1031,6 @@ and (orientation: portrait) {
     }
 
     .mark::before {
-        width: 141.3px;
-    }
-
-    .subscription-form button {
-        height: 61.7px;
+        width: 143.3px;
     }
 }
